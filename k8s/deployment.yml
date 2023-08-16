@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: shopping-cart-app
-        image: akshaypatil5596/shopping-cart:replaceImageTag
+        image: akshaypatil5596/shopping-cart:1
         ports:
         - containerPort: 3002
