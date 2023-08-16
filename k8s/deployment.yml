@@ -15,7 +15,7 @@ spec:
         app: shopping-cart
     spec:
       containers:
-      - name: spring-boot-app
+      - name: shopping-cart-app
         image: akshaypatil5596/shopping-cart:replaceImageTag
         ports:
         - containerPort: 3002
