@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopping-cart
+  labels:
+    app: shopping-cart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shopping-cart
+  template:
+    metadata:
+      labels:
+        app: shopping-cart
+    spec:
+      containers:
+      - name: spring-boot-app
+        image: akshaypatil5596/shopping-cart:replaceImageTag
+        ports:
+        - containerPort: 3002
