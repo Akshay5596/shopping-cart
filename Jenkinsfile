@@ -10,13 +10,13 @@ pipeline {
       steps {
         sh 'echo passed'
         // git tool: 'Default Git', url: 'https://github.com/Akshay5596/Jenkins-Zero-To-Hero'
-        git branch: 'main', url: 'https://github.com/Akshay5596/node_fronted.git'
+        git branch: 'main', url: 'https://github.com/Akshay5596/shopping-cart.git'
       }
     }
 
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "akshaypatil5596/frontend:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "akshaypatil5596/shopping-cart:${BUILD_NUMBER}"
         // DOCKERFILE_LOCATION = "java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
@@ -33,7 +33,7 @@ pipeline {
     // java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
     stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "node_fronted"
+            GIT_REPO_NAME = "shopping-cart"
             GIT_USER_NAME = "Akshay5596"
         }
         steps {
